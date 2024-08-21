@@ -95,7 +95,7 @@ const resolvers = {
 async function startApolloServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
   await server.start();
-  server.applyMiddleware({ app, path: '/server' });
+  server.applyMiddleware({ app, path: '/graphql' });
 
   // Serve a simple message on the root URL
   app.get('/', (req, res) => {
