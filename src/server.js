@@ -97,7 +97,6 @@ async function startApolloServer() {
   await server.start();
   server.applyMiddleware({ app, path: '/graphql' });
 
-  // Serve a simple message on the root URL
   app.get('/', (req, res) => {
     res.send('<h1>Welcome to the TodoApp Backend!</h1>');
   });
