@@ -95,7 +95,7 @@ const resolvers = {
 async function startApolloServer() {
   const server = new ApolloServer({ typeDefs, resolvers });
   await server.start();
-  server.applyMiddleware({ app, path: '/graphql' });
+  server.applyMiddleware({ app, path: '/server' });
 
   app.get('/', (req, res) => {
     res.send('<h1>Welcome to the TodoApp Backend!</h1>');
