@@ -97,6 +97,11 @@ async function startApolloServer() {
   await server.start();
   server.applyMiddleware({ app, path: '/server' });
 
+  // Serve a simple message on the root URL
+  app.get('/', (req, res) => {
+    res.send('<h1>Welcome to the TodoApp Backend!</h1>');
+  });
+
   // Start the Express server
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => {
